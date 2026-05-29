@@ -1,24 +1,22 @@
 def yanghui_triangle(n):
     """
-    生成杨辉三角
+    生成器方式生成杨辉三角，每次 yield 一行
     """
-    triangle = []
+    row = []
     for i in range(n):
         row = [1] * (i + 1)
         if i >= 2:
+            prev = prev_row
             for j in range(1, i):
-                row[j] = triangle[i - 1][j - 1] + triangle[i - 1][j]
-        triangle.append(row)
-    return triangle
-
-
-def print_yanghui(triangle):
-    """打印杨辉三角"""
-    for row in triangle:
-        print(" ".join(str(num) for num in row).center(len(triangle[-1]) * 4))
+                row[j] = prev[j - 1] + prev[j]
+        prev_row = row
+        yield row
 
 
 if __name__ == "__main__":
     n = 10
-    triangle = yanghui_triangle(n)
-    print_yanghui(triangle)
+    # 收集所有行以计算最大宽度
+    rows = list(yanghui_triangle(n))
+    width = len(" ".join(str(num) for num in rows[-1]))
+    for row in rows:
+        print(" ".join(str(num) for num in row).center(width))

@@ -29,5 +29,7 @@ def dec_to_base3(n: float, precision: int = 10) -> str:
 
 
 if __name__ == "__main__":
-    num = float(input("请输入十进制数："))
-    print(f"三进制结果：{dec_to_base3(num)}")
+    while True:
+        num = input("请输入一个10进制的数（可以是小数）")
+        res = dec_to_base3(num)
+        print("转换为3进制后的结果为："+str(res))

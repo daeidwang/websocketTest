@@ -7,6 +7,7 @@ def count_chars(s: str) -> dict:
 
 
 if __name__ == "__main__":
+    #测试代码
     while True:
         text = input("请输入字符串：")
         counts = count_chars(text)

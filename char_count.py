@@ -7,7 +7,9 @@ def count_chars(s: str) -> dict:
 
 
 if __name__ == "__main__":
-    text = input("请输入字符串：")
-    counts = count_chars(text)
-    for ch, cnt in sorted(counts.items(), key=lambda x: -x[1]):
-        print(f"'{ch}': {cnt}")
+    while True:
+        text = input("请输入字符串：")
+        counts = count_chars(text)
+        print("字符串中每个字符出现次数为：")
+        for ch, cnt in sorted(counts.items(), key=lambda x: -x[1]):
+            print(f"'{ch}': {cnt}")

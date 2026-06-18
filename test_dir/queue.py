@@ -57,33 +57,3 @@ class Queue(Generic[T]):
     def __bool__(self) -> bool:
         return not self.is_empty()
 
-
-if __name__ == "__main__":
-    # 测试队列
-    q = Queue[int]()
-
-    print("=== 队列测试 ===")
-    print(f"队列是否为空: {q.is_empty()}")
-    print(f"队列大小: {q.size()}")
-
-    # 入队
-    q.enqueue(1)
-    q.enqueue(2)
-    q.enqueue(3)
-    print(f"\n入队 1, 2, 3 后: {q}")
-
-    # 查看队首
-    print(f"队首元素 peek: {q.peek()}")
-
-    # 出队
-    print(f"出队元素: {q.dequeue()}")
-    print(f"出队后: {q}")
-    print(f"出队元素: {q.dequeue()}")
-    print(f"出队后: {q}")
-    print(f"出队元素: {q.dequeue()}")
-    print(f"出队后: {q}")
-
-    # 空队列出队
-    print(f"\n空队列出队: {q.dequeue()}")
-    print(f"空队列 peek: {q.peek()}")
-    print(f"队列是否为空: {q.is_empty()}")

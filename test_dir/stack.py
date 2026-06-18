@@ -66,24 +66,3 @@ class Stack:
     def __contains__(self, item: Any) -> bool:
         return item in self._items
 
-
-if __name__ == "__main__":
-    # 简单测试
-    s = Stack()
-    print(f"栈是否为空: {s.is_empty()}")   # True
-
-    s.push(1)
-    s.push(2)
-    s.push(3)
-    print(f"入栈后: {s}")                  # Stack([1, 2, 3])
-    print(f"栈大小: {s.size()}")            # 3
-    print(f"栈顶元素: {s.peek()}")          # 3
-
-    print(f"弹出: {s.pop()}")              # 3
-    print(f"弹出后: {s}")                  # Stack([1, 2])
-
-    print(f"2 是否在栈中: {2 in s}")       # True
-    print(f"栈长度: {len(s)}")             # 2
-
-    s.clear()
-    print(f"清空后是否为空: {s.is_empty()}")  # True
